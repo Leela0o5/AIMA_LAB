@@ -1,3 +1,34 @@
+'''
+Logic:
+1. Create the root node using the initial board.
+2. Insert the root node into the frontier (Stack).
+3. Repeat until the frontier becomes empty:
+       a. Remove the top node from the stack.
+       b. Check if it is the goal state.
+       c. Mark it as explored.
+       d. Generate all successor states.
+       e. Add unexplored successors to the frontier.
+4. If stack becomes empty, no solution exists.
+
+Data Structure Used:
+    Stack (LIFO)
+
+Justification:
+    - Explores the search space depth-first, going as deep as possible.
+    - Uses less memory compared to BFS.
+    - Does not guarantee the minimum number of moves.
+    - Complete for finite search spaces.
+
+Time Complexity:
+    O(b^m)
+
+Space Complexity:
+    O(bm)
+
+where
+    b = 56 (maximum successors)
+    m = maximum depth of the search tree
+'''
 start = (0,1,2,3,4,5,6,7)
 
 class Node:

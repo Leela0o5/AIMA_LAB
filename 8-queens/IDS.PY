@@ -1,3 +1,35 @@
+'''
+Logic:
+1. Create the root node using the initial board.
+2. Perform iterative deepening with increasing depth limits.
+3. For each depth limit, run depth-first search:
+       a. Remove the top node from the stack.
+       b. Check if it is the goal state.
+       c. If depth limit not reached, mark it as explored.
+       d. Generate all successor states.
+       e. Add unexplored successors to the frontier.
+4. If solution not found at current depth, increase limit and repeat.
+5. Continue until a solution is found or all depths exhausted.
+
+Data Structure Used:
+    Stack (LIFO) with depth limit
+
+Justification:
+    - Combines benefits of DFS (memory efficiency) and BFS (optimality).
+    - Guarantees finding the shallowest goal.
+    - Uses less memory than BFS.
+    - Finds solution with minimum number of moves.
+
+Time Complexity:
+    O(b^d)
+
+Space Complexity:
+    O(bd)
+
+where
+    b = 56 (maximum successors)
+    d = solution depth
+'''
 start = (0, 1, 2, 3, 4, 5, 6, 7)
 
 

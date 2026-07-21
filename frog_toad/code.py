@@ -1,3 +1,51 @@
+'''
+Logic:
+This file implements multiple search algorithms for solving the Frogs and Toads puzzle:
+
+1. BFS (Breadth-First Search):
+   - Uses Queue (FIFO) to explore states level by level
+   - Guarantees shortest solution
+   
+2. DFS (Depth-First Search):
+   - Uses Stack (LIFO) to explore one branch completely before backtracking
+   - Uses less memory than BFS
+   
+3. IDS (Iterative Deepening Search):
+   - Combines benefits of DFS and BFS
+   - Runs depth-limited searches with increasing depth limits
+   - Guarantees shortest solution with memory efficiency of DFS
+
+Problem:
+   - Move all B pieces (left) past all W pieces (right)
+   - B piece can slide/jump right, W piece can slide/jump left
+   - Slide: move to adjacent empty space
+   - Jump: jump over exactly one piece into empty space
+
+Data Structures Used:
+   - BFS: Queue (FIFO)
+   - DFS: Stack (LIFO)
+   - IDS: Stack with depth limit
+
+Justification:
+   - BFS finds optimal solution but uses more memory
+   - DFS uses less memory but doesn't guarantee optimality
+   - IDS combines benefits of both approaches
+
+Time Complexity:
+   - BFS: O(b^d)
+   - DFS: O(b^m)
+   - IDS: O(b^d)
+
+Space Complexity:
+   - BFS: O(b^d)
+   - DFS: O(bm)
+   - IDS: O(bd)
+
+where
+    b = branching factor (maximum possible moves)
+    d = solution depth
+    m = maximum depth of search tree
+'''
 from collections import deque
 import heapq
 start = "BBB_WWW"
